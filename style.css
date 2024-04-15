@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(39, 38, 38);
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-bars {
+    display: block;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 2em 1em;
+    z-index: 99;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.banner-section {
+    background-image: url(./images/image_1.jpg);
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 800px;
+}
+
+.row {
+    height: 100vh;
+    min-height: 800px;
+}
+
+.banner-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.intro-text {
+    margin: 20em auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    line-height: 1.3;
+}
+
+.intro-text h1 {
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 100;
+}
+
+.intro-text h1 strong {
+    font-size: 7rem;
+}
+
+.intro-text p {
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.portfolio,
+.resume,
+.about-me,
+.services,
+.blog,
+.contact,
+footer {
+    padding: 6em 3em;
+    max-width: 80em;
+    margin: 0 auto;
+    color: white;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.heading h1 {
+    font-weight: lighter;
+    font-size: 2.5rem;
+}
+
+.heading h1 strong {
+    font-weight: bolder;
+}
+
+/* PORTFOLIO SECTION */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    align-self: center;
+}
+
+.grid img {
+    width: 100%;
+}
+
+.port {
+    text-align: center;
+}
+
+.port .port-img {
+    position: relative;
+}
+
+.port .port-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.port .port-img:hover::before {
+    width: 100%;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.grid .port p {
+    font-weight: 100;
+    font-size: 0.9em;
+    color: grey;
+}
+
+.grid .port h4 {
+    font-weight: 100;
+    font-size: 1.3rem;
+    padding-top: 1.1em;
+}
+
+/* RESUME SECTION */
+.resume .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.edd {
+    width: 100%;
+    margin-bottom: 3em;
+    padding: 2em 2em;
+    line-height: 1.8;
+    background-color: rgb(67, 64, 64);
+    border-radius: 10px;
+}
+
+.edd h4 {
+    color: chartreuse;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.edd p,
+.edd h5 {
+    color: grey;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.edd small {
+    font-weight: bold;
+}
+
+.grid h2 {
+    margin-bottom: 1em;
+    font-weight: lighter;
+}
+
+/* ABOUT ME SECTION */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+}
+
+.about-img img {
+    width: 100%;
+}
+
+.about-text p {
+    font-weight: 100;
+    color: grey;
+    padding-bottom: 0.5em;
+}
+
+.about-text h5 {
+    color: grey;
+    font-weight: 100;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.about-text .heading {
+    text-align: left;
+}
+
+.button {
+    /* text-align: center; */
+    margin-top: 2em;
+}
+
+.button button {
+    background-color: chartreuse;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    padding: 0.5em 1em;
+    font-weight: 100;
+}
+
+.button .grey {
+    background-color: grey;
+}
+
+.about-text p {
+    font-size: 1.5rem;
+}
+
+/* TESTIMONIAL */
+
+.testimonial {
+    background-color: rgb(39, 38, 38);
+    padding: 4em 5em;
+    color: white;
+}
+
+.testimonial .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.test-1 .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.test-2 .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.profile-1 img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profile-1 {
+    grid-column: 1/3;
+}
+
+.profile-2 {
+    grid-column: 3/13;
+    background-color: rgb(67, 64, 64);
+    padding: 1em 3em;
+    color: gray;
+}
+
+.profile-2 p {
+    font-weight: 100;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.profile-2 small {
+    font-style: italic;
+}
+
+.profile-2 small span {
+    color: chartreuse;
+    font-weight: 100;
+}
+
+/* SERVICES SECTION */
+.flex-container {
+    display: flex;
+    gap: 3em;
+}
+
+.flex-1 {
+    background-color: rgb(67, 64, 64);
+    padding: 1em 3em;
+    color: gray;
+    text-align: center;
+}
+
+.flex-1 h3 {
+    color: white;
+    font-weight: 100;
+    margin-bottom: 0.5em;
+}
+
+.flex-1 .icon {
+    background-color: chartreuse;
+    border-radius: 50%;
+    padding: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.flex-1 .icon i {
+    color: black;
+    font-size: 2rem;
+}
+
+.flex-1 p {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.flex-1 a {
+    color: chartreuse;
+    text-decoration: none;
+}
+
+/* BLOG SECTION */
+.blog-1 img {
+    width: 100%;
+}
+
+.blog-1 {
+    background-color: rgb(67, 64, 64);
+}
+
+.blog-1 .text {
+    padding: 2em 2em;
+    line-height: 1.7;
+}
+
+.blog-1 .text p {
+    color: gray;
+    font-weight: 100;
+}
+
+.date {
+    display: flex;
+    gap: 2em;
+    color: gray;
+    font-weight: 100;
+    margin-top: 0.5em;
+}
+
+/* CONTACT SECTION */
+
+.contact .grid-container{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-1 h2,
+.contact-2 h2 {
+    margin-bottom: 30px;
+    font-weight: 100;
+    font-size: 2.3rem;
+}
+
+.input-control {
+    margin-bottom: 20px;
+}
+
+.input-control input {
+    width: 100%;
+    background-color: rgb(67, 64, 64);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 2em 0 2em 1em;
+}
+
+.input-control textarea {
+    padding: 2em 0 2em 1em;
+    width: 100%;
+    background-color: rgb(67, 64, 64);
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.input-control input:focus,
+.input-control textarea:focus {
+    background-color: rgb(84, 81, 81);
+}
+
+.input-control input::placeholder,
+.input-control textarea::placeholder {
+    font-size: 1rem;
+    color: white;
+}
+
+.details {
+    margin-bottom: 40px;
+}
+
+.details h5 {
+    color: cadetblue;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin-bottom: 0.5em;
+}
+
+.details a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.contact-button a button {
+    border-radius: 25px;
+    padding: 1.2em 3em;
+    color: white;
+    border: none;
+    outline: none;
+    font-weight: 100;
+    background-color: chartreuse;
+}
+
+/* FOOTER SECTION */
+footer {
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.icon-1 {
+    background-color: rgb(67, 64, 64);
+    border-radius: 50%;
+    padding: 1.5em;
+    margin: 2em 0 0;
+    display: inline-block;
+}
+
+.icon-1 i {
+    color: chartreuse;
+    font-size: 1.5rem;
+}
+@media only screen and (max-width: 992px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -100%;
+        background-color: black;
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+        padding: 5rem;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    ul li a {
+        color: white;
+    }
+    .buttbars {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+    .bars,.close {
+        display: block;
+    }
+    header #show-menu:checked~nav {
+        left: 0%;
+    }
+    input[type="checkbox"]{
+        display: none;
+    }
+        
+}
